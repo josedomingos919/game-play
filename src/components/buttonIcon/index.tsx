@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 
 import DiscordImage from './../../assets/discord.png'
-import { styles } from './style'
+import { styles } from './styles'
 
 type props = TouchableOpacityProps & {
   title: string
