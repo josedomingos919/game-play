@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native'
 
 import { styles } from './styles'
+import Avatar from '../avatar'
 
 export default function Profile() {
   return (
     <View style={styles.container}>
+      <Avatar urlImage="https://github.com/josedomingos919.png" />
+
       <View>
         <View style={styles.user}>
           <Text style={styles.greeting}>Olá, </Text>
