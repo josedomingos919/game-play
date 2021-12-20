@@ -3,7 +3,7 @@ import { theme } from '../../global/styles/theme'
 import { styles } from './styles'
 
 type Props = {
-  children: Array<JSX.Element>
+  children: JSX.Element
 }
 
 export default function Background({ children }: Props) {

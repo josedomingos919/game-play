@@ -7,9 +7,7 @@ import {
 } from '@expo-google-fonts/rajdhani'
 import AppLoading from 'expo-app-loading'
 
-import Background from './src/components/background'
-import SignIn from './src/screens/signIn'
-import Home from './src/screens/home'
+import Routes from './src/routes'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,13 +20,13 @@ export default function App() {
   if (!fontsLoaded) return <AppLoading />
 
   return (
-    <Background>
+    <>
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
-      <Home />
-    </Background>
+      <Routes />
+    </>
   )
 }
