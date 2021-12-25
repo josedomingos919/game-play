@@ -6,9 +6,13 @@ import Category from '../category'
 
 type Props = {
   categorySelected: string
+  setCategory: (categoryId: string) => void
 }
 
-export default function CategorySelect({ categorySelected }: Props) {
+export default function CategorySelect({
+  categorySelected,
+  setCategory,
+}: Props) {
   return (
     <ScrollView
       horizontal
@@ -18,8 +22,12 @@ export default function CategorySelect({ categorySelected }: Props) {
         paddingRight: 40,
       }}
     >
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <Category
+          onPress={() => setCategory(category.id)}
+          style={{
+            marginLeft: !index ? 24 : 0,
+          }}
           key={category.id}
           title={category.title}
           icon={category.icon}
