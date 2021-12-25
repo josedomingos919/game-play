@@ -1,11 +1,5 @@
-import {
-  Image,
-  View,
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
-} from 'react-native'
-
+import { Image, View, Text } from 'react-native'
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
 import DiscordImage from './../../assets/discord.png'
 import { styles } from './styles'
 
