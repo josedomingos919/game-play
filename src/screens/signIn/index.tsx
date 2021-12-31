@@ -1,8 +1,10 @@
 import { View, Image, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
+import Background from '../../components/background'
 import ButtonIcon from '../../components/buttonIcon'
 import Illustration from './../../assets/illustration.png'
+
 import { styles } from './styles'
 
 export default function SignIn() {
@@ -13,22 +15,28 @@ export default function SignIn() {
   }
 
   return (
-    <View style={styles.container}>
-      <Image source={Illustration} style={styles.image} resizeMode="stretch" />
+    <Background>
+      <View style={styles.container}>
+        <Image
+          source={Illustration}
+          style={styles.image}
+          resizeMode="stretch"
+        />
 
-      <View style={styles.content}>
-        <Text style={styles.title}>
-          Conecte-se {'\n'}e organize suas{'\n'}
-          jogatinas
-        </Text>
+        <View style={styles.content}>
+          <Text style={styles.title}>
+            Conecte-se {'\n'}e organize suas{'\n'}
+            jogatinas
+          </Text>
 
-        <Text style={styles.subTitle}>
-          Crie grupos para jogar seus games{'\n'}
-          favouritos com seus amigos
-        </Text>
+          <Text style={styles.subTitle}>
+            Crie grupos para jogar seus games{'\n'}
+            favouritos com seus amigos
+          </Text>
 
-        <ButtonIcon onPress={handleSignIn} title="Entrar com Discord" />
+          <ButtonIcon onPress={handleSignIn} title="Entrar com Discord" />
+        </View>
       </View>
-    </View>
+    </Background>
   )
 }

@@ -6,8 +6,9 @@ import ButtonAdd from '../../components/buttonAdd'
 import CategorySelect from '../../components/categorySelect'
 import ListHeader from '../../components/listHeader'
 import Appointment, { AppointmentProps } from '../../components/appointment'
-import { styles } from '../../components/background/styles'
 import ListDivider from '../../components/ListDivider'
+import Background from '../../components/background'
+import { styles } from '../../components/background/styles'
 
 export default function Home() {
   const [category, setCategory] = useState('')
@@ -111,29 +112,32 @@ export default function Home() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Profile />
-        <ButtonAdd />
-      </View>
+    <Background>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Profile />
+          <ButtonAdd />
+        </View>
 
-      <CategorySelect
-        setCategory={handleCategorySelect}
-        categorySelected={category}
-      />
-
-      <View style={styles.content}>
-        <ListHeader title="Partidas Agendadas" subTitle="Total 6" />
-
-        <FlatList
-          data={appointments}
-          keyExtractor={(item) => item.id}
-          ItemSeparatorComponent={() => <ListDivider />}
-          renderItem={({ item }) => <Appointment data={item} />}
-          style={styles.matches}
-          showsVerticalScrollIndicator={false}
+        <CategorySelect
+          hasCheckBox={true}
+          setCategory={handleCategorySelect}
+          categorySelected={category}
         />
+
+        <View style={styles.content}>
+          <ListHeader title="Partidas Agendadas" subTitle="Total 6" />
+
+          <FlatList
+            data={appointments}
+            keyExtractor={(item) => item.id}
+            ItemSeparatorComponent={() => <ListDivider />}
+            renderItem={({ item }) => <Appointment data={item} />}
+            style={styles.matches}
+            showsVerticalScrollIndicator={false}
+          />
+        </View>
       </View>
-    </View>
+    </Background>
   )
 }
